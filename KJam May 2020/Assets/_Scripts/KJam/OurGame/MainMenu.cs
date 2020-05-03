@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System;
 using Photon.Pun;
 
 namespace KJam.OurGame
@@ -54,7 +52,7 @@ namespace KJam.OurGame
 			}
 		}
 
-		private void SetNickName(string name)
+		public void SetNickName(string name)
 		{
 			findMatchBtn.interactable = !string.IsNullOrEmpty(name);
 		}
@@ -63,6 +61,10 @@ namespace KJam.OurGame
 		{
 			string nickName = nickNameInputField.text;
 
+			PhotonNetwork.NickName = nickName;
+
+			PlayerPrefs.SetString(playerPrefsNameKey, nickName);
+			PlayerPrefs.Save();
 		}
 
 		private void Update()
