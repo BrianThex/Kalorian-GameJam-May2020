@@ -1,11 +1,12 @@
 ﻿using Photon.Pun;
 using Photon.Realtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace KJam.OurGame.Menus
+namespace KJam.OurGame.Network
 {
     public class MainMenuNetworkHandler : MonoBehaviourPunCallbacks
     {
@@ -15,6 +16,8 @@ namespace KJam.OurGame.Menus
         [SerializeField] private GameObject waitingStatusPanel = null;
         [SerializeField] private TextMeshProUGUI waitingStatusText = null;
         [SerializeField] private GameObject HUD = null;
+
+        public int playerNumber = 0;
 
         private bool isConnecting = false;
 
@@ -88,12 +91,12 @@ namespace KJam.OurGame.Menus
                 waitingStatusText.text = "Opponent Found";
                 Debug.Log("matching is ready to begin");
 
-                waitingStatusPanel.SetActive(false);
-                HUD.SetActive(true);
+                SetGameScreens();
+                playerNumber = 2;
             }
         }
 
-        public override void OnPlayerEnteredRoom(Player newPlayer)
+        public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
         {
             if (PhotonNetwork.CurrentRoom.PlayerCount == MaxPlayersPerRoom)
             {
@@ -102,11 +105,17 @@ namespace KJam.OurGame.Menus
                 waitingStatusText.text = "Opponent Found";
                 Debug.Log("Match is ready to begin");
 
-                PhotonNetwork.LoadLevel("PregameLobby");
+                PhotonNetwork.LoadLevel("Level1Test");
 
-                waitingStatusPanel.SetActive(false);
-                HUD.SetActive(true);
+                SetGameScreens();
+                playerNumber = 1;
             }
+        }
+
+        private void SetGameScreens()
+        {
+            waitingStatusPanel.SetActive(false);
+            HUD.SetActive(true);
         }
     }
 }

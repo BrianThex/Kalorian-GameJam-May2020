@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace KJam.OurGame.ChatRoomTest
+namespace KJam.OurGame.Player
 {
     [RequireComponent(typeof(CharacterController))]
     public class ChatRoomPlayerMovement : MonoBehaviourPun
