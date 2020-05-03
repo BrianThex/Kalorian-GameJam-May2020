@@ -19,6 +19,7 @@ namespace Photon.Realtime
     using System;
     using System.Net.Sockets;
     using ExitGames.Client.Photon;
+    using UnityEngine.Networking;
 
     #if UNITY_WEBGL
     // import WWW class
@@ -29,14 +30,14 @@ namespace Photon.Realtime
     #if UNITY_WEBGL
     public class PingHttp : PhotonPing
     {
-        private WWW webRequest;
+        private UnityWebRequest webRequest;
 
         public override bool StartPing(string address)
         {
             base.Init();
 
             address = "https://" + address + "/photon/m/?ping&r=" + UnityEngine.Random.Range(0, 10000);
-            this.webRequest = new WWW(address);
+            this.webRequest = new UnityWebRequest(address);
             return true;
         }
 
