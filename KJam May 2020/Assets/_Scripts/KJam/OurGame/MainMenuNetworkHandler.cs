@@ -14,6 +14,7 @@ namespace KJam.OurGame.Menus
         [SerializeField] private GameObject findOpponentPanel = null;
         [SerializeField] private GameObject waitingStatusPanel = null;
         [SerializeField] private TextMeshProUGUI waitingStatusText = null;
+        [SerializeField] private GameObject HUD = null;
 
         private bool isConnecting = false;
 
@@ -86,6 +87,9 @@ namespace KJam.OurGame.Menus
             {
                 waitingStatusText.text = "Opponent Found";
                 Debug.Log("matching is ready to begin");
+
+                waitingStatusPanel.SetActive(false);
+                HUD.SetActive(true);
             }
         }
 
@@ -99,6 +103,9 @@ namespace KJam.OurGame.Menus
                 Debug.Log("Match is ready to begin");
 
                 PhotonNetwork.LoadLevel("PregameLobby");
+
+                waitingStatusPanel.SetActive(false);
+                HUD.SetActive(true);
             }
         }
     }
