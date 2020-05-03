@@ -10,18 +10,18 @@ namespace KJam.OurGame.Player
     {
         [SerializeField] private float movementSpeed = 0;
 
-        [SerializeField] public GameObject myCam;
+        private CharacterController controller = null;
 
         private void Start()
         {
-            //controller = GetComponent<CharacterController>();
+            controller = GetComponent<CharacterController>();
         }
         void Update()
         {
-           // if (photonView.IsMine)
-           // {
+            if (photonView.IsMine)
+            {
                 TakeInput();
-           // }
+            }
         }
         private void TakeInput()
         {
@@ -32,7 +32,7 @@ namespace KJam.OurGame.Player
                 z = Input.GetAxisRaw("Vertical")
             }.normalized;
 
-            transform.Translate(movement * movementSpeed * Time.deltaTime, Space.World);
+            controller.SimpleMove(movement * movementSpeed);
         }
     }
 }
