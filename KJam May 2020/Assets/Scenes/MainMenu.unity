@@ -3187,5 +3187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 2793952052291762491, guid: f24e29fd7e16ea7488071f39a358b403,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f24e29fd7e16ea7488071f39a358b403, type: 3}
