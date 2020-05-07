@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.27)  6 MAY 2020 03:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.3.27)  7 MAY 2020 04:07
 entering extended mode
 **./progressionAlgo.tex
 (progressionAlgo.tex
@@ -1238,7 +1238,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 70--71
  []
 
 
-Overfull \hbox (35.72273pt too wide) in paragraph at lines 79--96
+Overfull \hbox (35.72273pt too wide) in paragraph at lines 79--97
 [][] 
  []
 
@@ -1277,9 +1277,9 @@ amme/Miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programme/Miktex/font
 s/type1/public/amsfonts/cm/cmsy8.pfb><D:/Programme/Miktex/fonts/type1/public/am
 sfonts/cm/cmsy9.pfb><D:/Programme/Miktex/fonts/type1/public/doublestroke/dsrom1
 0.pfb>
-Output written on progressionAlgo.pdf (3 pages, 175125 bytes).
+Output written on progressionAlgo.pdf (3 pages, 175412 bytes).
 PDF statistics:
- 321 PDF objects out of 1000 (max. 8388607)
+ 322 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
